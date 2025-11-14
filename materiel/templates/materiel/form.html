@@ -1,0 +1,7 @@
+<h2>Ajouter / Modifier un matériel</h2>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Enregistrer</button>
+</form>
+<a href="{% url 'liste_materiels' %}">Retour</a>

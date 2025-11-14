@@ -1,0 +1,17 @@
+<h1>Inventaire du matériel</h1>
+<a href="{% url 'ajouter_materiel' %}">+ Ajouter un matériel</a>
+<table border="1">
+  <tr><th>Nom</th><th>Catégorie</th><th>Quantité</th><th>État</th><th>Actions</th></tr>
+  {% for m in materiels %}
+  <tr>
+    <td>{{ m.nom }}</td>
+    <td>{{ m.categorie }}</td>
+    <td>{{ m.quantite }}</td>
+    <td>{{ m.etat }}</td>
+    <td>
+      <a href="{% url 'modifier_materiel' m.id %}">Modifier</a> |
+      <a href="{% url 'supprimer_materiel' m.id %}">Supprimer</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
